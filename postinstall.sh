@@ -1,6 +1,5 @@
 #! /bin/bash
 
-{cat} 2>> posintall-erros.log # show erros in filelog
 
 USER="marpo"
 echo " ===================== POST INSTALLATION START ====================== "
@@ -121,7 +120,6 @@ echo "
 wget_links=(
   vscode             = "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
   dropbox            = "https://linux.dropbox.com/packages/ubuntu/dropbox_2020.03.04_amd64.deb"
-  term-animation     = "https://cpan.metacpan.org/authors/id/K/KB/KBAUCOM/Term-Animation-2.6.tar.gz"
 )
 for wget_downloads in ${wget_links[@]}; do
   cd /home/$USER/Downloads; wget -c "$wget_downloads" 
@@ -145,7 +143,8 @@ echo "ZSH has default shell:"
 sudo chsh -s /bin/zsh
 
 echo "Installing lts nvm:"
-nvm install --lts # maybe need restart terminal
+source ~/.bashrc # refresh cli
+nvm install --lts 
 
 
 

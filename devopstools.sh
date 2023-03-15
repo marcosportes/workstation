@@ -1,7 +1,6 @@
 #! /bin/bash
 ## Creating a devops environment - Distro Ubuntu 22.04 and based
 
-{cat} 2>> devopstools-erros.log ## show erros in filelog
 
 USER="marpo"   # change-me
 
