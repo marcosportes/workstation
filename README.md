@@ -12,7 +12,7 @@ I'm currently learning Devops. I automated the installation of tools with the [d
 ## Customization
 After installing the OS, the [postinstall.sh](/postinstall.sh) installs the packages and configures what I need.
 
-### Terminal
+### CLI
 
 Terminal emulator with [Tilix](https://github.com/gnunn1/tilix/) and ZSH
 
@@ -29,7 +29,7 @@ Plugins zsh:
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)  
 
 
-### Interface and Extensions
+### GUI and Extensions
 
 Icons theme
 - [Numix Square](https://github.com/numixproject/numix-icon-theme-square)
