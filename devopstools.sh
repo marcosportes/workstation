@@ -4,8 +4,6 @@
 
 USER="marpo"   # change-me
 
-while true
-do
 echo "
  ### ========== My DevOps Tools ========== ###
  
@@ -131,6 +129,4 @@ case $tool in
     00)  function00 ;;
 
     *)  echo "Invalid Option" ;;
-    
-    esac
-done
+esac
