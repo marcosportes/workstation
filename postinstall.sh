@@ -7,7 +7,7 @@ echo " ===================== POST INSTALLATION START ====================== "
 sudo apt update
 
 echo " 
------------ ADDING APT REPOSITORIES: ------------------------------------------------------------
+========== ADDING APT REPOSITORIES ========================================================
 "
 apt_repo=(
   ppa:numix/ppa
@@ -19,7 +19,7 @@ done
 
 
 echo " 
------------ INSTALLING APT PACKS: ---------------------------------------------------------------
+========== INSTALLING APT PACKS ===========================================================
 "
 
 echo "Removing occasional apt locks:"
@@ -56,7 +56,7 @@ sudo apt update
 
 
 echo " 
------------- INSTALLING PACKS FROM FLATHUB: -------------------------------------------------
+========== INSTALLING PACKS FROM FLATHUB ===================================================
 "
 flathub_packs=(
   md.obsidian.Obsidian
@@ -79,7 +79,7 @@ done
 
 
 echo " 
------------- INSTALLING PACKS FROM SNAPCRAFT: -----------------------------------------------
+========== INSTALLING PACKS FROM SNAPCRAFT =================================================
 "
 snap_packs=(
   authy
@@ -95,7 +95,7 @@ done
 
 
 echo "
------------- INSTALLING PYTHON PACKAGES -----------------------------------------------------
+========== INSTALLING PYTHON PACKAGES ======================================================
 "
 pip_packs=(
   "pip" 
@@ -114,8 +114,8 @@ done
 
 
 
-echo " 
-------------- DOWNLOADING EXTERNAL PACKS: --------------------------------------------------- 
+echo "
+========== DOWNLOADING EXTERNAL PACKS ======================================================
 "
 wget_links=(
   vscode             = "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
@@ -137,19 +137,19 @@ sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUS
 
 
 echo " 
-------------- SETUPS: ---------------------------------------------------------------------
+========== SETUPS ===========================================================================
 "
 echo "ZSH has default shell:"
 sudo chsh -s /bin/zsh
 
 echo "Installing lts nvm:"
-source ~/.bashrc # refresh cli
-nvm install --lts 
+sudo source ~/.bashrc # refresh cli
+nvm install --lts
 
 
 
 echo " 
-------------- UPGRADE SYSTEM AND CLEANING: ------------------------------------------------
+========== UPGRADE SYSTEM AND CLEANING: =====================================================
 "
 sudo apt update && sudo apt dist-upgrade -y
 flatpak update -y
