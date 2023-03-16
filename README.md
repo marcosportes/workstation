@@ -16,7 +16,7 @@ After installing the OS, the [postinstall.sh](/postinstall.sh) installs the pack
 
 Terminal emulator with [Tilix](https://github.com/gnunn1/tilix/) and [oh-my-szh](https://ohmyz.sh/)
 
-- Font: [RobotoMono NerdFont Bold ](/fonts/RobotoMono-NerdFont-Bold.ttf)
+- Font: Hack NerdFont Bold Mono
 - Color Scheme: [Gogh Colors](https://gogh-co.github.io/Gogh/)
 - Theme with: *Refined or Agnoster*
 - Plugins zsh:
