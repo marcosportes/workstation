@@ -14,19 +14,14 @@ After installing the OS, the [postinstall.sh](/postinstall.sh) installs the pack
 
 ### CLI
 
-Terminal emulator with [Tilix](https://github.com/gnunn1/tilix/) and ZSH
+Terminal emulator with [Tilix](https://github.com/gnunn1/tilix/) and [oh-my-szh](https://ohmyz.sh/)
 
-- Font: Any fonts in [Powerline Fonts](https://github.com/powerline/fonts)
+- Font: [RobotoMono NerdFont Bold ](/fonts/RobotoMono-NerdFont-Bold.ttf)
 - Color Scheme: [Gogh Colors](https://gogh-co.github.io/Gogh/)
-(GruvBoxDark or the Earthsong)
-- Theme with [Oh-my-szh](https://ohmyz.sh/): "Refined" or "Agnoster"
-
-
-Plugins zsh:
-
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)  
+- Theme with: *Refined or Agnoster*
+- Plugins zsh:
+    - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+    - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)  
 
 
 ### GUI and Extensions
