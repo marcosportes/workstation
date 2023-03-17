@@ -5,22 +5,27 @@
 USER="marpo"   # change-me
 
 echo "
- ### ========== My DevOps Tools ========== ###
- 
- ATTENTION! Before any installation, update packages (Option 0)! 
- - Based on official documentation.
+Made by: github.com/marcosportes
 
- 0.  APT Upate/Upgrade
- 1.  Docker
- 2.  Docker Compose
- 3.  Git
- 4.  Ansible
- 5.  Terraform
- 6.  [Install All] 
- 00. Clear packages junk
-
-Enter the tool you want to install: "
-read tool
+                 ╔═══════════════════════════════════════════════════════════════════╗
+                 ║                        My DevOps Tools                            ║
+                 ╠═══════════════════════════════════════════════════════════════════╣
+                 ║  ATTENTION! Before any installation update packages (Option 0)!   ║
+                 ║                                                                   ║
+                 ║ 0 | APT  Update/Upgrade                                           ║
+                 ║ 1 | Docker                                                        ║
+                 ║ 2 | Docker Compose                                                ║
+                 ║ 3 | Git                                                           ║
+                 ║ 4 | Ansible                                                       ║
+                 ║ 5 | Terraform                                                     ║
+                 ║ 00| Upgrade and Cleaning APT Packs                                ║  
+                 ║                                                                   ║
+                 ║     ▐ Type <all> to run ALL options                               ║   
+                 ║                                                  Ctrl+C for exit  ║
+                 ╚═══════════════════════════════════════════════════════════════════╝
+                 
+░ Enter an option:"
+read -r tool
 
 function0(){
     sudo apt update && sudo apt upgrade -y
@@ -28,14 +33,16 @@ function0(){
 
 function1()
 {
-    echo "### Instalando DOCKER ###"
+    echo "
+                     ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ INSTALLING DOCKER ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+    "
     echo "### Docker install - Install using the repository ###"
     # Documentation: https://docs.docker.com/engine/install/ubuntu/
     echo -e "\n1. Update the apt package index and install packages to allow apt to use a repository over HTTPS:"
     sudo apt install lsb-release ca-certificates curl gnupg vim apt-transport-https -y
         
     echo -e "\n2. Add Docker’s official GPG key:"
-    sudo mkdir -m 0755 -p /etc/apt/keyrings
+    sudo mkdir -m 0755 -p /etc/apt/keyrings -y
     #curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
         
@@ -45,41 +52,45 @@ function1()
        
     echo -e "\nInstalling Docker Engine, containerd"
     sudo apt update
-    sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin
+    sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin -y
     sudo usermod -aG docker $USER
     echo -e "\nDOCKER has been installed!\n"
-    echo "-------------------------//-------------------------"
 }
 
 function2()
 {
-    echo -e "### Installing DOCKER COMPOSE ###\n"
+    echo -e "
+                   ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ INSTALLING DOCKER-COMPOSE ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+    "
     sudo apt install docker-compose -y
     echo -e "\nDOCKER COMPOSE has been installed!\n"
-    echo "-------------------------//-------------------------"
 }
 
 function3()
 {
-    echo -e "### Installing GIT ###\n"
+    echo -e "
+                        ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ INSTALLING GIT ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+    "
     sudo apt install git -y      
     echo -e "\n GIT has been installed!\n"
-    echo "-------------------------//-------------------------"
 }
 
 function4()
 {
-    echo -e "### Installing ANSIBLE ###\n"
+    echo -e "
+                       ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ INSTALLING ANSIBLE ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+    "
     sudo apt install software-properties-common
     sudo add-apt-repository --yes --update ppa:ansible/ansible
     sudo apt install ansible -y
-    echo -e "\nANSIBLE has been installed!\n"
-    echo "-------------------------//-------------------------"
+    echo -e "\n ANSIBLE has been installed!\n"
 }
 
 function5()
 {
-    echo -e "### Installing TERRAFORM ###\n"
+    echo -e "
+                      ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ INSTALLING TERRAFORM ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+    "
     echo -e "1. Download the signing key to a new keyring\n"
     curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
     echo -e "Process concluded!\n"
@@ -92,13 +103,14 @@ function5()
     sudo apt update
     sudo apt install terraform -y
     echo -e "\nTERRAFORM has been installed!\n"
-    echo "-------------------------//-------------------------"
 }
 
 
 function6()
 {
-    echo "### Installing ALL tools! ###"
+    echo "
+                    ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ INSTALLING ALL TOOLS ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+    "
 }
 
 function00()
@@ -122,7 +134,7 @@ case $tool in
 
     5)  function5 ;;
 
-    6)  function1 && function2 && function3 && function4 && function5 
+    all)  function1 && function2 && function3 && function4 && function5 
         echo -e "\n Tools Installed! \n"
     ;;
 
@@ -130,3 +142,10 @@ case $tool in
 
     *)  echo "Invalid Option" ;;
 esac
+
+
+echo "
+
+                           ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡ Done! ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+
+"
