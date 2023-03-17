@@ -10,7 +10,7 @@ vim.opt.signcolumn = "yes"            ---Show the sign column
 
 -- Interface 
 vim.opt.syntax = "on"               ---Allow syntax highlighting        
-vim.opt.colorcolumn = '105'            ---Show col for max line length
+vim.opt.colorcolumn = '80'            ---Show col for max line length
 vim.opt.number = true                 ---Show line numbers
 vim.opt.relativenumber = true         ---Show relative line numbers
 
