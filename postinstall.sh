@@ -98,7 +98,8 @@ echo "
 ========== INSTALLING PYTHON PACKAGES ======================================================
 "
 pip_packs=(
-  "pip" 
+  "pip"
+  "pynvim" 
   "virtualenv"
 )
 for pip_name in "${pip_packs[@]}"
