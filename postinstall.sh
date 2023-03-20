@@ -11,15 +11,15 @@ Made by: github.com/marcosportes
                  ╠═══════════════════════════════════════════════════════════════════╣
                  ║  ATTENTION! Before any installation update packages (Option 0)!   ║
                  ║                                                                   ║
-                 ║ 0 | Update APT Packs                                              ║
+                 ║ 0 | Update Dpkg Packs                                             ║
                  ║ 1 | Add Repositories                                              ║
-                 ║ 2 | Only APT packs                                                ║
+                 ║ 2 | Only Dpkg packs                                               ║
                  ║ 3 | Only Flatpaks                                                 ║
                  ║ 4 | Only Snaps                                                    ║
                  ║ 5 | Only Python packs (Pip)                                       ║
                  ║ 6 | Download external packs                                       ║
                  ║ 7 | Setups                                                        ║  
-                 ║ 00| Upgrade and Cleaning APT Packs                                ║
+                 ║ 00| Upgrade and Cleaning Dpkg Packs                               ║
                  ║                                                                   ║
                  ║    ▐ Type <all> to run ALL options                                ║
                  ║                                                 Ctrl+C for exit   ║
@@ -32,7 +32,7 @@ Made by: github.com/marcosportes
 
 function0() {
   echo "
-  ========== UPDATING APT PACKS ========================================================
+  ========== UPDATING Dpkg(apt) PACKS ========================================================
   "
   sudo apt-get update
 }
@@ -70,6 +70,7 @@ function2() {
    vim
    htop
    python3-pip
+   yarn
    lua5.4
    gnome-tweaks
    numix-icon-theme-square
@@ -146,6 +147,7 @@ function5() {
    "pip"
    "pynvim" 
    "virtualenv"
+   "pyright"
   )
   for pip_name in "${pip_packs[@]}"
   do
@@ -198,8 +200,8 @@ function7() {
 # nvm
   wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 # zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
-  sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git '$ZSH_CUSTOM'/plugins/zsh-autosuggestions
-  sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git '$ZSH_CUSTOM'/plugins/zsh-syntax-highlighting
+  sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-autosuggestions
+  sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 }
 
 
