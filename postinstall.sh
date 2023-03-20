@@ -67,10 +67,10 @@ function2() {
    zsh
    tilix
    snapd
+   flatpak
    vim
    htop
    python3-pip
-   yarn
    lua5.4
    gnome-tweaks
    numix-icon-theme-square
@@ -188,20 +188,25 @@ function7() {
   echo "ZSH has default shell:"
   sudo chsh -s /bin/zsh
 
-  echo "Installing lts nvm:"
-  source ~/.nvm/nvm.sh 
-  nvm install --lts
-
   echo "
   External auto install:
   "
-#oh-my-zsh
+#oh-my-zsh -------------
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-# nvm
-  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 # zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
   sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-autosuggestions
   sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+# nvm -------------------
+  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  echo "Installing lts node:"
+  source ~/.nvm/nvm.sh 
+  nvm install --lts
+
+# yarn ------------------
+  curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+  yarn install --frozen-lockfile #dependence for coc in nvim  
+
 }
 
 
