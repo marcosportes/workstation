@@ -61,6 +61,8 @@ function1() {
    tilix
    git
    snapd
+   curl
+   wget
    flatpak
    vim
    htop
@@ -107,7 +109,7 @@ function2() {
   )
   for flatpak_names in "${flathub_packs[@]}"; do
    if ! flatpak list | grep -q "$flatpak_names"; then
-     sudo flatpak install flathub "$flatpak_names" 
+     sudo flatpak install flathub "$flatpak_names" -y
      echo "[OK!] • $flatpak_names "
    else
      echo "[Already installed!] ✔ $flatpak_names"
@@ -152,7 +154,7 @@ function4() {
        echo "[Already installed!] ✔ $pip_name"
      else
        echo "Installing $pip_name ..."
-       sudo pip install "$pip_name" -y
+       sudo pip install "$pip_name"
        echo "[OK!] • $pip_name"
      fi
   done
@@ -188,21 +190,22 @@ function6() {
   echo "
   External auto install:
   "
-#oh-my-zsh -------------
-  sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-# zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
-  sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-autosuggestions
-  sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+# yarn -----------------
+  curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+  yarn install --frozen-lockfile #dependence for coc in nvim 
 
-# nvm -------------------
+# nvm ------------------
   wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
   echo "Installing lts node:"
   source ~/.nvm/nvm.sh 
-  nvm install --lts
+  nvm install --lts 
 
-# yarn ------------------
-  curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
-  yarn install --frozen-lockfile #dependence for coc in nvim  
+#oh-my-zsh -------------
+  sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+# zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
+  sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-autosuggestions
+  sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 }
 
