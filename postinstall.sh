@@ -43,6 +43,10 @@ function1() {
   echo " 
   ========== ADDING APT REPOSITORIES ========================================================
   "
+  echo "Removing occasional apt locks:"
+  sudo rm /var/lib/dpkg/lock-frontend
+  sudo rm /var/cache/apt/archives/lock
+  
   apt_repo=(
    ppa:numix/ppa
    ppa:ytvwld/asciiquarium  
@@ -59,13 +63,10 @@ function2() {
   ========== INSTALLING APT PACKS ===========================================================
   "
 
-  echo "Removing occasional apt locks:"
-  sudo rm /var/lib/dpkg/lock-frontend
-  sudo rm /var/cache/apt/archives/lock
-
   apt_packs=(
    zsh
    tilix
+   git
    snapd
    flatpak
    vim
