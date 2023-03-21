@@ -76,7 +76,7 @@ function1() {
    libcurses-perl
   )
   for apt_names in "${apt_packs[@]}"; do
-   if ! dpkg -l | grep -q "$apt_names"; then  ## install if not already installed
+   if ! dpkg -s "$apt_names" &>/dev/null; then  ## install if not already installed
      sudo apt install "$apt_names" -y
      echo "[OK!] •  $apt_names "
    else
