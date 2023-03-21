@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 USER="marpo"
 
 echo "
@@ -54,7 +53,8 @@ function1() {
   for add_repo in "${apt_repo[@]}"; do
    sudo add-apt-repository --yes --update "$add_repo"
   done
-}
+} 
+sudo apt update
 
 
 
@@ -62,7 +62,6 @@ function2() {
   echo " 
   ========== INSTALLING APT PACKS ===========================================================
   "
-
   apt_packs=(
    zsh
    tilix
@@ -99,6 +98,10 @@ function3() {
   echo " 
   ========== INSTALLING PACKS FROM FLATHUB ===================================================
   "
+  echo "Adding flathub repo:"
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  echo "done!"
+  
   flathub_packs=(
    md.obsidian.Obsidian
    com.discordapp.Discord
@@ -130,7 +133,7 @@ function4() {
   )
   for snap_names in "${snap_packs[@]}"; do
    if ! snap list | grep -q "$snap_names"; then
-     sudo snap install "$snap_names" -y
+     sudo snap install "$snap_names"
      echo "[OK!] • $snap_names "
    else
      echo "[Already installed!] ✔ $snap_names"
