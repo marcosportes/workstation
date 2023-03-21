@@ -12,7 +12,7 @@ vim.opt.signcolumn 			= "yes"        ---Show the sign column
 vim.opt.syntax 				= "on"         ---Allow syntax highlighting        
 vim.opt.colorcolumn 		= '105'        ---Show col for max line length
 vim.opt.number 				= true         ---Show line numbers
-vim.opt.relativenumber 		= true         ---Show relative line numbers
+vim.opt.relativenumber 		= false         ---Show relative line numbers
 
 -- Search 
 vim.opt.ignorecase 			= true         ---Ignore case in search patterns

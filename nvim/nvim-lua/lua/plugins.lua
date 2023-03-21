@@ -1,12 +1,11 @@
 local Plug = vim.fn['plug#']
 local cmd = vim.cmd
 
-
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim' -- execute: "yarn install" in /nvim/plugged/coc-nvim at post install 
 Plug 'savq/melange-nvim' -- theme
 Plug 'tpope/vim-fugitive' -- git support
 Plug 'nvim-lualine/lualine.nvim' -- line theme
