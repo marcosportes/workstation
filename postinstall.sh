@@ -10,18 +10,18 @@ Made by: github.com/marcosportes
                  ╠═══════════════════════════════════════════════════════════════════╣
                  ║  ATTENTION! Before any installation update packages (Option 0)!   ║
                  ║                                                                   ║
-                 ║ 0 | Update Dpkg Packs                                             ║
-                 ║ 1 | Add Repositories                                              ║
-                 ║ 2 | Only Dpkg packs                                               ║
-                 ║ 3 | Only Flatpaks                                                 ║
-                 ║ 4 | Only Snaps                                                    ║
-                 ║ 5 | Only Python packs (Pip)                                       ║
-                 ║ 6 | Download external packs                                       ║
-                 ║ 7 | Setups                                                        ║  
+                 ║ 0 | Apt-get update                                                ║
+                 ║ 1 | Only Dpkg packs                                               ║
+                 ║ 2 | Only Flatpaks                                                 ║
+                 ║ 3 | Only Snaps                                                    ║
+                 ║ 4 | Only Python packs (Pip)                                       ║
+                 ║ 5 | Download external packs                                       ║
+                 ║ 6 | Setups                                                        ║  
                  ║ 00| Upgrade and Cleaning Dpkg Packs                               ║
                  ║                                                                   ║
-                 ║    ▐ Type <all> to run ALL options                                ║
-                 ║                                                 Ctrl+C for exit   ║
+                 ║    ▐ Type <all> to run ALL options ▐                              ║
+                 ║                                                                   ║
+                 ║                                                   Ctrl+C for exit ║
                  ╚═══════════════════════════════════════════════════════════════════╝
                  
 ░ Enter an option:"
@@ -40,12 +40,13 @@ function0() {
 
 function1() {
   echo " 
-  ========== ADDING APT REPOSITORIES ========================================================
+  ========== INSTALLING APT PACKS ===========================================================
   "
   echo "Removing occasional apt locks:"
   sudo rm /var/lib/dpkg/lock-frontend
-  sudo rm /var/cache/apt/archives/lock
+  sudo rm /var/cache/apt/archives/lock 
   
+  echo "Adding repositories:"
   apt_repo=(
    ppa:numix/ppa
    ppa:ytvwld/asciiquarium  
@@ -53,15 +54,8 @@ function1() {
   for add_repo in "${apt_repo[@]}"; do
    sudo add-apt-repository --yes --update "$add_repo"
   done
-} 
-sudo apt update
+  echo "done"
 
-
-
-function2() {
-  echo " 
-  ========== INSTALLING APT PACKS ===========================================================
-  "
   apt_packs=(
    zsh
    tilix
@@ -76,7 +70,6 @@ function2() {
    numix-icon-theme-square
    flameshot
    asciiquarium
-   calibre
    neofetch
    lollypop
    qbittorrent
@@ -94,11 +87,11 @@ function2() {
 
 
 
-function3() {
+function2() {
   echo " 
   ========== INSTALLING PACKS FROM FLATHUB ===================================================
   "
-  echo "Adding flathub repo:"
+  echo "Adding repositories: "
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   echo "done!"
   
@@ -124,7 +117,7 @@ function3() {
 
 
 
-function4() {
+function3() {
   echo " 
   ========== INSTALLING PACKS FROM SNAPCRAFT =================================================
   "
@@ -143,7 +136,7 @@ function4() {
 
 
 
-function5() {
+function4() {
   echo "
   ========== INSTALLING PYTHON PACKAGES ======================================================
   "
@@ -167,7 +160,7 @@ function5() {
 
 
 
-function6() {
+function5() {
   echo "
   ========== DOWNLOADING EXTERNAL PACKS ======================================================
   "
@@ -185,7 +178,7 @@ function6() {
 
 
 
-function7() {
+function6() {
   echo " 
   ========== SETUPS ===========================================================================
   "
@@ -243,12 +236,9 @@ case "$option" in
 
   6) function6 ;;
 
-  7) function7 ;;
-
   00) function00 ;;
 
-  all) function0 && function1 && function2 && function3 && function4 && function5 && function6 &&
-  function7 && function00 ;;
+  all) function0 && function1 && function2 && function3 && function4 && function5 && function6 && function00 ;;
   
   *) echo "Invalid option!" ;;
 esac
