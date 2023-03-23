@@ -8,8 +8,10 @@ echo "Download/Install:"
    chmod u+x nvim.appimage
    ./nvim.appimage --appimage-extract
    ./squashfs-root/AppRun --version
-   sudo mv squashfs-root /
-   sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+   sudo rm -rf /squashfs-root
+   sudo mv -f squashfs-root /
+   sudo ln -sf /squashfs-root/AppRun /usr/bin/nvim
+   sudo rm nvim.appimage
 echo "Done"
 
 
