@@ -194,11 +194,17 @@ function6() {
   curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
   yarn install --frozen-lockfile #dependence for coc in nvim 
 
+
 # nvm ------------------
   wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
   echo "Installing lts node:"
   source ~/.nvm/nvm.sh 
-  nvm install --lts 
+  nvm install --lts
+
+
+#  Safe npm, a Security Wrapper for npm and npx ---------
+  npm install -g @socketsecurity/cli
+
 
 # zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
   sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/marpo/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -206,6 +212,7 @@ function6() {
 
 #oh-my-zsh -------------
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
 
 }
 
