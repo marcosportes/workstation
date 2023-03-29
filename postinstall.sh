@@ -5,24 +5,28 @@ USER="marpo"
 echo "
 Made by: github.com/marcosportes
 
-                 ╔═══════════════════════════════════════════════════════════════════╗
-                 ║                POST INSTALLATION FOR UBUNTU/BASED                 ║
-                 ╠═══════════════════════════════════════════════════════════════════╣
-                 ║  ATTENTION! Before any installation update packages (Option 0)!   ║
-                 ║                                                                   ║
-                 ║ 0 | Apt-get update                                                ║
-                 ║ 1 | Only Dpkg packs                                               ║
-                 ║ 2 | Only Flatpaks                                                 ║
-                 ║ 3 | Only Snaps                                                    ║
-                 ║ 4 | Only Python packs (Pip)                                       ║
-                 ║ 5 | Download external packs                                       ║
-                 ║ 6 | Setups                                                        ║  
-                 ║ 00| Upgrade and Cleaning Dpkg Packs                               ║
-                 ║                                                                   ║
-                 ║    ▐ Type <all> to run ALL options ▐                              ║
-                 ║                                                                   ║
-                 ║                                                   Ctrl+C for exit ║
-                 ╚═══════════════════════════════════════════════════════════════════╝
+      ╔═══════════════════════════════════════════════════════════════════╗              
+      ║          ░█▀█░█▀█░█▀▀░▀█▀░░░▀█▀░█▀█░█▀▀░▀█▀░█▀█░█░░░█░░           ║
+      ║          ░█▀▀░█░█░▀▀█░░█░░░░░█░░█░█░▀▀█░░█░░█▀█░█░░░█░░           ║
+      ║          ░▀░░░▀▀▀░▀▀▀░░▀░░░░▀▀▀░▀░▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀▀▀           ║
+      ║                                                                   ║
+      ║                        FOR UBUNTU/BASED                           ║
+      ╠═══════════════════════════════════════════════════════════════════╣
+      ║ Recommended before any installation upgrade packages (Option 00)  ║
+      ║                                                                   ║
+      ║ 0 | Apt-get update                                                ║
+      ║ 1 | Only Dpkg packs                                               ║
+      ║ 2 | Only Flatpaks                                                 ║
+      ║ 3 | Only Snaps                                                    ║
+      ║ 4 | Only Python packs (Pip)                                       ║
+      ║ 5 | Download external packs                                       ║
+      ║ 6 | Setups                                                        ║  
+      ║ 00| Upgrade and Cleaning Dpkg Packs                               ║
+      ║                                                                   ║
+      ║    ▐ Type <all> to run ALL options                                ║
+      ║                                                                   ║
+      ║                                                   Ctrl+C for exit ║
+      ╚═══════════════════════════════════════════════════════════════════╝
                  
 ░ Enter an option:"
   read -r option
