@@ -7,22 +7,24 @@ USER="marpo"   # change-me
 echo "
 Made by: github.com/marcosportes
 
-                 ╔═══════════════════════════════════════════════════════════════════╗
-                 ║                        My DevOps Tools                            ║
-                 ╠═══════════════════════════════════════════════════════════════════╣
-                 ║  ATTENTION! Before any installation update packages (Option 0)!   ║
-                 ║                                                                   ║
-                 ║ 0 | APT  Update/Upgrade                                           ║
-                 ║ 1 | Docker                                                        ║
-                 ║ 2 | Docker Compose                                                ║
-                 ║ 3 | Git                                                           ║
-                 ║ 4 | Ansible                                                       ║
-                 ║ 5 | Terraform                                                     ║
-                 ║ 00| Upgrade and Cleaning APT Packs                                ║  
-                 ║                                                                   ║
-                 ║     ▐ Type <all> to run ALL options                               ║   
-                 ║                                                  Ctrl+C for exit  ║
-                 ╚═══════════════════════════════════════════════════════════════════╝
+        ╔═══════════════════════════════════════════════════════════════════╗
+        ║          ░█▀▄░█▀▀░█░█░█▀█░█▀█░█▀▀░░░▀█▀░█▀█░█▀█░█░░░█▀▀           ║
+        ║          ░█░█░█▀▀░▀▄▀░█░█░█▀▀░▀▀█░░░░█░░█░█░█░█░█░░░▀▀█           ║
+        ║          ░▀▀░░▀▀▀░░▀░░▀▀▀░▀░░░▀▀▀░░░░▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀           ║
+        ╠═══════════════════════════════════════════════════════════════════╣
+        ║  Recommended before any installation upgrade packages (Option 0)  ║
+        ║                                                                   ║
+        ║ 0 | APT  Update/Upgrade                                           ║
+        ║ 1 | Docker                                                        ║
+        ║ 2 | Docker Compose                                                ║
+        ║ 3 | Git                                                           ║
+        ║ 4 | Ansible                                                       ║
+        ║ 5 | Terraform                                                     ║
+        ║ 00| Clear packages junk                                           ║  
+        ║                                                                   ║
+        ║     ▐ Type <all> to run ALL options                               ║   
+        ║                                                  Ctrl+C for exit  ║
+        ╚═══════════════════════════════════════════════════════════════════╝
                  
 ░ Enter an option:"
 read -r tool
