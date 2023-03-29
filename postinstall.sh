@@ -21,7 +21,7 @@ Made by: github.com/marcosportes
       ║ 4 | Only Python packs (Pip)                                       ║
       ║ 5 | Download external packs                                       ║
       ║ 6 | Setups                                                        ║  
-      ║ 00| Upgrade and Cleaning Dpkg Packs                               ║
+      ║ 00| Upgrade and clear packages junk                               ║
       ║                                                                   ║
       ║    ▐ Type <all> to run ALL options                                ║
       ║                                                                   ║
