@@ -56,7 +56,8 @@ function1() {
    ppa:ytvwld/asciiquarium  
   )
   for add_repo in "${apt_repo[@]}"; do
-   sudo add-apt-repository --yes --update "$add_repo"
+   sudo add-apt-repository -y "$add_repo"
+   sudo apt update
   done
   echo "done"
 
