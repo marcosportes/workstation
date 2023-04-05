@@ -71,6 +71,11 @@ function1() {
    flatpak
    vim
    htop
+   btop ## htop better alternative 
+   tldr ## mini manual for tools
+   exa  ## ls alternative
+   ncdu ## df -h alernative
+   bat  ## cat alternative (batcat)
    python3-pip
    lua5.4
    gnome-tweaks
@@ -217,6 +222,9 @@ function6() {
 
 #oh-my-zsh -------------
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+#tldr
+  tldr update
 
 
 }
