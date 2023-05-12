@@ -1,16 +1,15 @@
 # My tools and customization for Linux
 
-This script was made for the distro I currently use: PopOS 22.04 LTS. This makes it easy when I need to use another computer or simply format my desktop.
 
 
 ## Tools
 
-I'm currently learning Devops. I automated the installation of tools with the [devopstools.sh](/devopstools.sh). 
+I'm currently learning Cloud and Devops. I automated the installation of tools with the [Ubuntu/devopstools.sh](/devopstools.sh). 
 
 
 
 ## Customization
-After installing the OS, the [postinstall.sh](/postinstall.sh) installs the packages and configures what I need.
+After installing the OS, the postinstall.sh installs the packages and configures what I need.
 
 ### CLI
 
