@@ -1,3 +1,4 @@
+
 -- Mapleader key====================================\
 vim.g.mapleader = ","
 
@@ -31,7 +32,6 @@ vim.opt.splitright 			= true         ---Place new window to right of current one
 vim.opt.splitbelow 			= true         ---Place new window below the current one
 
 
-
 -- Themes ==========================================\
 vim.opt.termguicolors = true  --If term supports ui color then enable
 vim.opt.background = "dark"
@@ -42,10 +42,15 @@ vim.cmd([[ colorscheme melange ]])
 
 -- Plugin Settings =================================\
 
---autopairs:
+-- Markdown Preview
+vim.g.mkdp_auto_start = 0  -- open the preview window after entering the markdown buffer 
+vim.g.mkdp_auto_close = 0  -- auto close current preview window when change
+vim.g.mkdp_open_ip = ''    -- ip to open preview page
+
+-- Autopairs:
 require("nvim-autopairs").setup{}
 
---lualine:
+-- Lualine:
 require('lualine').setup {
 	options = {
 	  icons_enabled = true,
