@@ -68,6 +68,7 @@ function1() {
    curl
    wget
    flatpak
+   xclip # clipboard for nvim
    vim
    htop
    btop ## htop better alternative 

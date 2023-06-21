@@ -63,16 +63,18 @@ function1() {
    tilix
    git
    snapd
+   cargo # rust package manager
    curl
+   xclip # clipboard for nvim
    wget
    flatpak
    vim
    htop
-   btop # Alternativa melhor para o htop
-   tldr # Mini manual para ferramentas
-   exa # Alternativa ao ls
-   ncdu # Alternativa ao df -h
-   bat # Alternativa ao cat (batcat)
+   btop   # Alternativa melhor para o htop
+   tldr   # Mini manual para ferramentas
+   exa    # Alternativa ao ls
+   ncdu   # Alternativa ao df -h
+   bat    # Alternativa ao cat (batcat)
    python3-pip
    lua
    gnome-tweaks
