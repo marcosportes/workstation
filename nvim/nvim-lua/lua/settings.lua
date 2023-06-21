@@ -1,6 +1,6 @@
-
 -- Mapleader key====================================\
 vim.g.mapleader = ","
+
 
 
 -- General setup ===================================\
@@ -11,7 +11,7 @@ vim.opt.signcolumn 			= "yes"        ---Show the sign column
 
 -- Interface 
 vim.opt.syntax 				= "on"         ---Allow syntax highlighting        
-vim.opt.colorcolumn 		= '105'        ---Show col for max line length
+vim.opt.colorcolumn 		= '110'        ---Show col for max line length
 vim.opt.number 				= true         ---Show line numbers
 vim.opt.relativenumber 		= false         ---Show relative line numbers
 
@@ -32,15 +32,23 @@ vim.opt.splitright 			= true         ---Place new window to right of current one
 vim.opt.splitbelow 			= true         ---Place new window below the current one
 
 
+
 -- Themes ==========================================\
 vim.opt.termguicolors = true  --If term supports ui color then enable
 vim.opt.background = "dark"
-vim.cmd([[ colorscheme melange ]])
---vim.g.transparent_enabled = true
+--vim.cmd([[ colorscheme melange ]])
+vim.cmd([[ colorscheme gruvbox ]])
 
 
 
 -- Plugin Settings =================================\
+
+-- Minimap
+vim.g.minimap_auto_start = 1
+vim.g.minimap_width = 10
+vim.g.minimap_auto_start = 1
+vim.g.minimap_auto_start_win_enter = 1
+
 
 -- Markdown Preview
 vim.g.mkdp_auto_start = 0  -- open the preview window after entering the markdown buffer 
