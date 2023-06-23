@@ -66,6 +66,7 @@ function1() {
    cargo # rust package manager
    curl
    xclip # clipboard for nvim
+   ripgrep # nvim - telescope dependence
    wget
    flatpak
    vim

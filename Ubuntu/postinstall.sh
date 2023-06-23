@@ -69,13 +69,14 @@ function1() {
    wget
    flatpak
    xclip # clipboard for nvim
+   ripgrep # nvim - telescope dependence
    vim
    htop
-   btop ## htop better alternative 
-   tldr ## mini manual for tools
-   exa  ## ls alternative
-   ncdu ## df -h alernative
-   bat  ## cat alternative (batcat)
+   btop # htop better alternative 
+   tldr # mini manual for tools
+   exa  # ls alternative
+   ncdu # df -h alernative
+   bat  # cat alternative (batcat)
    python3-pip
    lua5.4
    gnome-tweaks
