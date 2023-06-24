@@ -209,8 +209,9 @@ function6() {
 
 
 # zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
-  sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/$USER/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-autosuggestions
-  sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 
 #oh-my-zsh -------------
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"

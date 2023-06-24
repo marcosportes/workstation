@@ -51,6 +51,7 @@ function1() {
   
   echo "Adding repositories:"
   apt_repo=(
+   ppa:git-core/ppa
    ppa:numix/ppa
    ppa:ytvwld/asciiquarium  
   )
@@ -113,9 +114,7 @@ function2() {
    com.discordapp.Discord
    org.telegram.desktop
    com.obsproject.Studio
-   org.audacityteam.Audacity
    com.spotify.Client
-   com.brave.Browser
    org.videolan.VLC
   )
   for flatpak_names in "${flathub_packs[@]}"; do
@@ -200,6 +199,7 @@ function6() {
   echo "
   External auto install:
   "
+
 # yarn -----------------
   curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
   yarn install --frozen-lockfile #dependence for coc in nvim 
@@ -217,14 +217,15 @@ function6() {
 
 
 # zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
-  sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/$USER/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-autosuggestions
-  sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER/.oh-my-zsh/$ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 
 #oh-my-zsh -------------
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 #tldr
-  tldr update
+  tldr -u
 
 
 }
@@ -235,10 +236,10 @@ function00() {
   echo " 
   ========== UPGRADE SYSTEM AND CLEANING: =====================================================
   "
-  sudo dnf upgrade --refresh -y
+  sudo apt update && sudo apt dist-upgrade -y
   flatpak update -y
-  sudo dnf autoremove -y
-
+  sudo apt autoclean # clear packages junk
+  sudo apt autoremove -y 
 }
 
 
