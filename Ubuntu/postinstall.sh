@@ -80,6 +80,7 @@ function1() {
    bat  # cat alternative (batcat)
    python3-pip
    lua5.4
+   g++
    gnome-tweaks
    numix-icon-theme-square
    flameshot
