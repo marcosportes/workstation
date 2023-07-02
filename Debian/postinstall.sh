@@ -9,7 +9,7 @@ Made by: github.com/marcosportes
       ║          ░█▀▀░█░█░▀▀█░░█░░░░░█░░█░█░▀▀█░░█░░█▀█░█░░░█░░           ║
       ║          ░▀░░░▀▀▀░▀▀▀░░▀░░░░▀▀▀░▀░▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀▀▀           ║
       ║                                                                   ║
-      ║                        FOR UBUNTU/BASED                           ║
+      ║                        FOR DEBIAN/BASED                           ║
       ╠═══════════════════════════════════════════════════════════════════╣
       ║ Recommended before any installation upgrade packages (Option 00)  ║
       ║                                                                   ║
