@@ -86,7 +86,6 @@ function1() {
    flameshot
    asciiquarium
    neofetch
-   lollypop
    qbittorrent
    libcurses-perl
   )

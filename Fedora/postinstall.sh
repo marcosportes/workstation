@@ -45,18 +45,18 @@ function1() {
   echo "
   ========== INSTALANDO PACOTES DNF ===========================================================
   "
-  echo "Removendo bloqueios ocasionais do dnf:"
+  echo "Removing occasional dnf locks:"
   sudo rm /var/lib/dnf/yumdb/lock
   sudo rm /var/lib/dnf/history.sqlite.{bz2,ini,lz4,xz,zstd}
   
-  echo "Adicionando repositórios:"
+  echo "Adding repositories: "
   dnf_repo=(
    # repos here
   )
   for add_repo in "${dnf_repo[@]}"; do
    sudo dnf install -y "$add_repo"
   done
-  echo "Concluído"
+  echo "Done!"
 
   dnf_packs=(
    zsh
@@ -101,7 +101,7 @@ function2() {
   echo " 
   ========== INSTALLING PACKS FROM FLATHUB ===================================================
   "
-  echo "Adding repositories: "
+  echo "Adding repositorie: "
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   echo "done!"
   
