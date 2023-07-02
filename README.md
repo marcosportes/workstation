@@ -4,7 +4,7 @@
 
 ## Tools
 
-I'm currently learning Cloud and Devops. I automated the installation of tools with the [Ubuntu/devopstools.sh](/devopstools.sh). 
+I'm currently learning Cloud and Devops. I automated the installation of tools with the devopstools.sh 
 
 
 
