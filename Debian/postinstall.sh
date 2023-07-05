@@ -69,6 +69,8 @@ function1() {
    curl
    wget
    flatpak
+   redshift # nightlight - my default: $ redshift -O 1000 
+   redshift-gtk #gtk version
    xclip # clipboard for nvim
    ripgrep # nvim - telescope dependence
    vim
