@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 echo "
 Made by: github.com/marcosportes
 
@@ -28,9 +27,7 @@ Made by: github.com/marcosportes
       ╚═══════════════════════════════════════════════════════════════════╝
                  
 ░ Enter an option:"
-  read -r option
-
-
+read -r option
 
 function0() {
   echo "
@@ -39,69 +36,65 @@ function0() {
   sudo apt-get update
 }
 
-
-
 function1() {
   echo " 
   ========== INSTALLING APT PACKS ===========================================================
   "
   echo "Removing occasional apt locks:"
   sudo rm /var/lib/dpkg/lock-frontend
-  sudo rm /var/cache/apt/archives/lock 
-  
+  sudo rm /var/cache/apt/archives/lock
+
   echo "Adding repositories:"
   apt_repo=(
-   ppa:git-core/ppa
-   ppa:numix/ppa
-   ppa:ytvwld/asciiquarium  
+    ppa:git-core/ppa
+    ppa:numix/ppa
+    ppa:ytvwld/asciiquarium
   )
   for add_repo in "${apt_repo[@]}"; do
-   sudo add-apt-repository -y "$add_repo"
-   sudo apt update
+    sudo add-apt-repository -y "$add_repo"
+    sudo apt update
   done
   echo "done"
 
   apt_packs=(
-   zsh
-   tilix
-   git
-   snapd
-   curl
-   wget
-   flatpak
-   redshift # nightlight - my default: $ redshift -O 1000 
-   redshift-gtk #gtk version
-   xclip # clipboard for nvim
-   ripgrep # nvim - telescope dependence
-   vim
-   htop
-   btop # htop better alternative 
-   tldr # mini manual for tools
-   exa  # ls alternative
-   ncdu # df -h alernative
-   bat  # cat alternative (batcat)
-   python3-pip
-   lua5.4
-   g++
-   gnome-tweaks
-   numix-icon-theme-square
-   flameshot
-   asciiquarium
-   neofetch
-   qbittorrent
-   libcurses-perl
+    zsh
+    tilix
+    git
+    snapd
+    curl
+    wget
+    flatpak
+    redshift     # nightlight - my default: $ redshift -O 1000
+    redshift-gtk #gtk version
+    xclip        # clipboard for nvim
+    ripgrep      # nvim - telescope dependence
+    vim
+    htop
+    btop # htop better alternative
+    tldr # mini manual for tools
+    exa  # ls alternative
+    ncdu # df -h alernative
+    bat  # cat alternative (batcat)
+    python3-pip
+    lua5.4
+    g++
+    gnome-tweaks
+    numix-icon-theme-square
+    flameshot
+    asciiquarium
+    neofetch
+    qbittorrent
+    libcurses-perl
   )
   for apt_names in "${apt_packs[@]}"; do
-   if ! dpkg -s "$apt_names" &>/dev/null; then  ## install if not already installed
-     sudo apt install "$apt_names" -y
-     echo "[OK!] •  $apt_names "
-   else
-     echo "[Already installed!] ✔  $apt_names "
+    if ! dpkg -s "$apt_names" &>/dev/null; then ## install if not already installed
+      sudo apt install "$apt_names" -y
+      echo "[OK!] •  $apt_names "
+    else
+      echo "[Already installed!] ✔  $apt_names "
     fi
   done
 }
-
-
 
 function2() {
   echo " 
@@ -110,26 +103,24 @@ function2() {
   echo "Adding repositories: "
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   echo "done!"
-  
+
   flathub_packs=(
-   md.obsidian.Obsidian
-   com.discordapp.Discord
-   org.telegram.desktop
-   com.obsproject.Studio
-   com.spotify.Client
-   org.videolan.VLC
+    md.obsidian.Obsidian
+    com.discordapp.Discord
+    org.telegram.desktop
+    com.obsproject.Studio
+    com.spotify.Client
+    org.videolan.VLC
   )
   for flatpak_names in "${flathub_packs[@]}"; do
-   if ! flatpak list | grep -q "$flatpak_names"; then
-     sudo flatpak install flathub "$flatpak_names" -y
-     echo "[OK!] • $flatpak_names "
-   else
-     echo "[Already installed!] ✔ $flatpak_names"
-   fi
+    if ! flatpak list | grep -q "$flatpak_names"; then
+      sudo flatpak install flathub "$flatpak_names" -y
+      echo "[OK!] • $flatpak_names "
+    else
+      echo "[Already installed!] ✔ $flatpak_names"
+    fi
   done
 }
-
-
 
 function3() {
   echo " 
@@ -139,57 +130,50 @@ function3() {
     authy
   )
   for snap_names in "${snap_packs[@]}"; do
-   if ! snap list | grep -q "$snap_names"; then
-     sudo snap install "$snap_names"
-     echo "[OK!] • $snap_names "
-   else
-     echo "[Already installed!] ✔ $snap_names"
-   fi
+    if ! snap list | grep -q "$snap_names"; then
+      sudo snap install "$snap_names"
+      echo "[OK!] • $snap_names "
+    else
+      echo "[Already installed!] ✔ $snap_names"
+    fi
   done
 }
-
-
 
 function4() {
   echo "
   ========== INSTALLING PYTHON PACKAGES ======================================================
   "
   pip_packs=(
-   "pip"
-   "pynvim" 
-   "virtualenv"
-   "pyright"
+    "pip"
+    "pynvim"
+    "virtualenv"
+    "pyright"
   )
-  for pip_name in "${pip_packs[@]}"
-  do
-     if pip show "$pip_name" > /dev/null 2>&1; then
-       echo "[Already installed!] ✔ $pip_name"
-     else
-       echo "Installing $pip_name ..."
-       sudo pip install "$pip_name"
-       echo "[OK!] • $pip_name"
-     fi
+  for pip_name in "${pip_packs[@]}"; do
+    if pip show "$pip_name" >/dev/null 2>&1; then
+      echo "[Already installed!] ✔ $pip_name"
+    else
+      echo "Installing $pip_name ..."
+      sudo pip install "$pip_name"
+      echo "[OK!] • $pip_name"
+    fi
   done
 }
-
-
 
 function5() {
   echo "
   ========== DOWNLOADING EXTERNAL PACKS ======================================================
   "
   wget_links=(
-    vscode=   "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+    vscode= "https://az764295.vo.msecnd.net/stable/2ccd690cbff1569e4a83d7c43d45101f817401dc/code-stable-x64-1690491880.tar.gz"
   )
   for wget_downloads in "${wget_links[@]}"; do
-   wget -c "$wget_downloads" -P /home/"$USER"/Downloads;
-   echo "
+    wget -c "$wget_downloads" -P /home/"$USER"/Downloads
+    echo "
    File downloaded in ~/Downloads
   "
   done
 }
-
-
 
 function6() {
   echo " 
@@ -202,37 +186,30 @@ function6() {
   External auto install:
   "
 
-# yarn -----------------
+  # yarn -----------------
   curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
-  yarn install --frozen-lockfile #dependence for coc in nvim 
+  yarn install --frozen-lockfile #dependence for coc in nvim
 
-
-# nvm ------------------
+  # nvm ------------------
   wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
   echo "Installing lts node:"
-  source ~/.nvm/nvm.sh 
+  source ~/.nvm/nvm.sh
   nvm install --lts
 
-
-#  Safe npm, a Security Wrapper for npm and npx ---------
+  #  Safe npm, a Security Wrapper for npm and npx ---------
   npm install -g @socketsecurity/cli
 
+  # zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# zsh plugins: zsh-autosuggestions and zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-
-#oh-my-zsh -------------
+  #oh-my-zsh -------------
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
-#tldr
+  #tldr
   tldr -u
 
-
 }
-
-
 
 function00() {
   echo " 
@@ -241,34 +218,31 @@ function00() {
   sudo apt update && sudo apt dist-upgrade -y
   flatpak update -y
   sudo apt autoclean # clear packages junk
-  sudo apt autoremove -y 
+  sudo apt autoremove -y
 }
 
-
-
 case "$option" in
-  
-  0) function0 ;;
 
-  1) function1 ;;
-  
-  2) function2 ;;
-  
-  3) function3 ;;
-  
-  4) function4 ;;
+0) function0 ;;
 
-  5) function5 ;;
+1) function1 ;;
 
-  6) function6 ;;
+2) function2 ;;
 
-  00) function00 ;;
+3) function3 ;;
 
-  all) function0 && function1 && function2 && function3 && function4 && function5 && function6 && function00 ;;
-  
-  *) echo "Invalid option!" ;;
+4) function4 ;;
+
+5) function5 ;;
+
+6) function6 ;;
+
+00) function00 ;;
+
+all) function0 && function1 && function2 && function3 && function4 && function5 && function6 && function00 ;;
+
+*) echo "Invalid option!" ;;
 esac
-
 
 echo "
                         ============================ Done! ==============================
