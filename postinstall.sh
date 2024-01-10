@@ -31,8 +31,7 @@ function1() {
   echo "
   ========== INSTALLING PACKS FROM PACMAN ====================================================
   "
-  pacman_pack=pacman.txt
-  # Lê os nomes dos pacotes do arquivo e os armazena em um array
+  pacman_pack=./packages/pacman.txt
   mapfile -t pacman_packs <"$pacman_pack"
 
   for pacman_names in "${pacman_packs[@]}"; do
@@ -54,7 +53,7 @@ function2() {
   echo "done!"
 
   echo "Installing packs..."
-  flatpak_packs=flatpak.txt
+  flatpak_packs=./packages/flatpak.txt
   mapfile -t flatpak_packs <"$flatpak_packs"
 
   for flatpak_names in "${flatpak_packs[@]}"; do
@@ -68,7 +67,7 @@ function2() {
 }
 
 function3() {
-  snap_packs=snap.txt
+  snap_packs=./packages/snap.txt
   mapfile -t snap_packs <"$snap_packs"
   for snap_names in "${snap_packs[@]}"; do
     if ! snap list | grep -q "$snap_names"; then

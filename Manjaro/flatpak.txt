@@ -1,3 +1,0 @@
-md.obsidian.Obsidian
-com.discordapp.Discord
-com.spotify.Client
