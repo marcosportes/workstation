@@ -29,5 +29,4 @@ asciiquarium
 neofetch
 qbittorrent
 vlc
-spotify
 dropbox
