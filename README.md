@@ -1,4 +1,4 @@
-# My customization for Manjaro Linux
+# My basic customization for Manjaro Linux
 
 
 The [postinstall.sh](/postinstall.sh) installs the packages and configures what I need.
@@ -18,13 +18,12 @@ Terminal emulator with [Tilix](https://github.com/gnunn1/tilix/) and [oh-my-szh]
 ### GUI and Extensions
 
 Icons theme
-- [Numix Square](https://github.com/numixproject/numix-icon-theme-square)
+- [Gruvbox Icon](https://github.com/SylEleuth/gruvbox-plus-icon-pack) or [Numix Square](https://github.com/numixproject/numix-icon-theme-square)
 
 Gnome extensions
 
 - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-
-- [Volume Mixer](https://extensions.gnome.org/extension/3499/application-volume-mixer/)
+- [Desktop Icons NG](https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/)
 
 
 ##
