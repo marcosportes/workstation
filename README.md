@@ -5,11 +5,11 @@ The [postinstall.sh](/postinstall.sh) installs the packages and configures what 
 
 ### CLI
 
-Terminal emulator with [Tilix](https://github.com/gnunn1/tilix/) and [oh-my-szh](https://ohmyz.sh/)
+Terminal emulator with [Tabby](https://tabby.sh/) and [oh-my-szh](https://ohmyz.sh/)
 
 - Font: Hack NerdFont Bold Mono
-- Color Scheme: Earthsong by [Gogh Colors](https://gogh-co.github.io/Gogh/)
-- Theme with: [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- Tabby Color Scheme: Gruvbox Dark
+- Theme: [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - Plugins zsh:
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
     - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
@@ -18,7 +18,7 @@ Terminal emulator with [Tilix](https://github.com/gnunn1/tilix/) and [oh-my-szh]
 ### GUI and Extensions
 
 Icons theme
-- [Gruvbox Icon](https://github.com/SylEleuth/gruvbox-plus-icon-pack) or [Numix Square](https://github.com/numixproject/numix-icon-theme-square)
+- [Gruvbox Icon](https://github.com/SylEleuth/gruvbox-plus-icon-pack)
 
 Gnome extensions
 

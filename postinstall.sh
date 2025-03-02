@@ -10,9 +10,9 @@ Made by: github.com/marcosportes
       ║                        for Arch Based                             ║
       ╠═══════════════════════════════════════════════════════════════════╣
       ║ 0 | Pacman update                                                 ║
-      ║ 1 | Only Pacman packs                                             ║
+      ║ 1 | Only Arch Repo packs                                          ║
       ║ 2 | Only Flatpaks                                                 ║
-      ║ 3 | Only Snaps                                                    ║
+      ║ 3 | Only AUR                                                      ║
       ║ 4 | Download external packs                                       ║
       ║ 5 | Setups                                                        ║  
       ║                                                                   ║
@@ -29,7 +29,7 @@ function0() {
 
 function1() {
   echo "
-  ========== INSTALLING PACKS FROM PACMAN ====================================================
+  ========== INSTALLING PACKS FROM ARCH REPOSITORIES ================================================
   "
   pacman_pack=./packages/pacman.txt
   mapfile -t pacman_packs <"$pacman_pack"
@@ -84,7 +84,7 @@ function4() {
 
   echo "Downloading external packs..."
   wget_links=(
-    "vscode=https://az764295.vo.msecnd.net/stable/2ccd690cbff1569e4a83d7c43d45101f817401dc/code-stable-x64-1690491880.tar.gz"
+    ""
   )
   for wget_downloads in "${wget_links[@]}"; do
     wget -c "${wget_downloads#*=}" -P "/home/$USER/Downloads"

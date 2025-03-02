@@ -3,3 +3,5 @@ com.discordapp.Discord
 io.dbeaver.DBeaverCommunity
 org.telegram.desktop
 org.nickvision.tubeconverter
+org.gabmus.hydrapaper
+com.heroicgameslauncher.hgl

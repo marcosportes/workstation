@@ -1,0 +1,10 @@
+google-chrome
+tabby
+dropbox
+iriunwebcam-bin
+lazydocker
+postman-bin
+spotify
+visual-studio-code-bin
+galaxybudsclient-bin
+google-earth-pro
