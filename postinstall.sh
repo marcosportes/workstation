@@ -67,17 +67,29 @@ function2() {
 }
 
 function3() {
-  snap_packs=./packages/snap.txt
-  mapfile -t snap_packs <"$snap_packs"
-  for snap_names in "${snap_packs[@]}"; do
-    if ! snap list | grep -q "$snap_names"; then
-      sudo snap install "$snap_names"
-      echo "[OK!] • $snap_names "
+  echo " 
+  ========== INSTALLING PACKS FROM AUR w/ PARU ===================================================
+  "
+  if ! command -v paru &> /dev/null; then
+    echo "paru não encontrado. Instalando..."
+    sudo pacman -S --needed base-devel
+    git clone https://aur.archlinux.org/paru.git
+    cd paru || exit
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf paru
+  fi
+
+  aur_packs=./packages/aur.txt
+  mapfile -t aur_packs <"$aur_packs"
+  for aur_name in "${aur_packs[@]}"; do
+    if ! paru -Qq | grep -qx "$aur_name"; then
+      paru -S --noconfirm "$aur_name"
+      echo "[OK!] • $aur_name"
     else
-      echo "[Already installed!] ✔ $snap_names"
+      echo "[Already installed!] ✔ $aur_name"
     fi
   done
-
 }
 
 function4() {

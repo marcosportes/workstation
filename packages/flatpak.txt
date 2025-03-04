@@ -1,6 +1,5 @@
 md.obsidian.Obsidian
 com.discordapp.Discord
-io.dbeaver.DBeaverCommunity
 org.telegram.desktop
 org.nickvision.tubeconverter
 org.gabmus.hydrapaper

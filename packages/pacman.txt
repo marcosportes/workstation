@@ -7,6 +7,7 @@ php
 neovim
 steam
 snapd
+dbeaver
 nvm
 bitwarden
 yay
