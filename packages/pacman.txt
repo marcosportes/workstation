@@ -4,6 +4,7 @@ git
 docker
 go
 php
+inetutils
 neovim
 steam
 snapd
