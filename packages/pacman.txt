@@ -1,3 +1,4 @@
+#nvidia-open-dkms se estiver laptop
 zsh
 tilix
 git

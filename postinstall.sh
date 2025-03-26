@@ -13,8 +13,8 @@ Made by: github.com/marcosportes
       ║ 1 | Only Arch Repo packs                                          ║
       ║ 2 | Only Flatpaks                                                 ║
       ║ 3 | Only AUR                                                      ║
-      ║ 4 | Download external packs                                       ║
-      ║ 5 | Setups                                                        ║  
+      ║ 4 | Setups                                                        ║
+      ║                                                                   ║  
       ║                                                                   ║
       ║ 00 | All Options                                                  ║
       ║                                                   Ctrl+C for exit ║
@@ -94,27 +94,11 @@ function3() {
 
 function4() {
 
-  echo "Downloading external packs..."
-  wget_links=(
-    ""
-  )
-  for wget_downloads in "${wget_links[@]}"; do
-    wget -c "${wget_downloads#*=}" -P "/home/$USER/Downloads"
-    echo "
-   File downloaded in ~/Downloads
-  "
-  done
-
-  echo "plugins oh-my-zsh..."
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-}
-
-function5() {
-
-  echo "nvm install lts version..."
-  nvm install --lts
+  echo "----- ZSH Setup ------"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
 }
 
@@ -130,9 +114,7 @@ case "$option" in
 
 4) function4 ;;
 
-5) function5 ;;
-
-00) function0 && function1 && function2 && function3 && function4 && function5 ;;
+00) function0 && function1 && function2 && function3 && function4 ;;
 
 *) echo "Invalid option!" ;;
 esac
