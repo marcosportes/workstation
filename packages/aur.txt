@@ -1,3 +1,4 @@
+#nvidia-open-beta-dkms se estiver no laptop
 google-chrome
 tabby
 dropbox
