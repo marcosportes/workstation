@@ -44,3 +44,5 @@ vlc
 aria2
 traceroute
 meld
+lutris
+heroic-games-launcher

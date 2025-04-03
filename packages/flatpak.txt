@@ -3,4 +3,3 @@ com.discordapp.Discord
 org.telegram.desktop
 org.nickvision.tubeconverter
 org.gabmus.hydrapaper
-com.heroicgameslauncher.hgl
