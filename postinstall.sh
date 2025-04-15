@@ -34,6 +34,9 @@ function1() {
   pacman_pack=./packages/pacman.txt
   mapfile -t pacman_packs <"$pacman_pack"
 
+  # set mirrors
+  sudo pacman-mirrors --country Brazil,Chile,Colombia,United_States,Germany,Netherlands,Portugal --api --set-branch stable
+
   for pacman_names in "${pacman_packs[@]}"; do
     if ! pacman -Qi "$pacman_names" &>/dev/null; then ## install if not already installed
       sudo pacman -S "$pacman_names" --noconfirm
@@ -99,6 +102,19 @@ function4() {
   git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+
+
+  echo "----- Set fonts -----"
+  sudo cp -f ./Interface/fonts/* /usr/share/fonts
+  fc-cache -fv
+
+
+  echo "----- Theme GruvBox Dark -----"
+  git clone git@github.com:Fausto-Korpsvart/Gruvbox-GTK-Theme.git
+  ./Gruvbox-GTK-Theme/themes/install.sh -t all -c dark --tweaks black -l
+  sudo flatpak override --filesystem=$HOME/.themes
+  flatpak override --user --filesystem=xdg-config/gtk-4.0
+  sudo flatpak override --filesystem=xdg-config/gtk-4.0
 
 }
 

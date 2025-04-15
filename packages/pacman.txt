@@ -2,6 +2,7 @@ zsh
 tilix
 git
 docker
+docker-compose
 go
 php
 inetutils
@@ -46,3 +47,4 @@ traceroute
 meld
 lutris
 heroic-games-launcher
+gtk-engine-murrine
